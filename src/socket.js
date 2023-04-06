@@ -8,9 +8,11 @@ export const initSocket = async () => {
     transports: ['websocket'],
   };
 
-  // jsut for vercel deployment
-  const vercel_deployment_link = 'https://' + process.env.REACT_APP_VERCEL_URL;
+  // console.log('socket');
+  // just for vercel deployment, Trying socket connection without providing link
 
-  console.log(vercel_deployment_link, ': vercel deployment link ');
-  return io(vercel_deployment_link, options);
+  // const vercel_deployment_link = process.env.REACT_APP_VERCEL_URL;
+  // console.log(vercel_deployment_link, ': vercel deployment link ');
+
+  return io(options);
 };
