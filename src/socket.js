@@ -7,6 +7,10 @@ export const initSocket = async () => {
     timeout: 10000,
     transports: ['websocket'],
   };
-  console.log(process.env.REACT_APP_VERCEL_URL, ': vercel ');
-  return io(process.env.REACT_APP_VERCEL_URL, options);
+
+  // jsut for vercel deployment
+  const vercel_deployment_link = 'https://' + process.env.REACT_APP_VERCEL_URL;
+
+  console.log(vercel_deployment_link, ': vercel deployment link ');
+  return io(vercel_deployment_link, options);
 };
