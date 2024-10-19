@@ -8,6 +8,6 @@ export const initSocket = async () => {
     transports: ['websocket', 'polling'],
   };
 
-  // Using same port and url as of our react server client
-  return io(process.env.REACT_APP_SERVER_AND_WEBSOCKET_URL, options);
+  // Using same port and url as of our react server client, so no need to give socket url
+  return io(options);
 };
