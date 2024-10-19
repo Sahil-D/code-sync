@@ -8,11 +8,6 @@ export const initSocket = async () => {
     transports: ['websocket', 'polling'],
   };
 
-  // console.log('socket');
-  // just for vercel deployment, Trying socket connection without providing link
-
-  // const vercel_deployment_link = process.env.REACT_APP_VERCEL_URL;
-  // console.log(vercel_deployment_link, ': vercel deployment link ');
-
-  return io(options);
+  // Using same port and url as of our react server client
+  return io(process.env.REACT_APP_SERVER_AND_WEBSOCKET_URL, options);
 };
